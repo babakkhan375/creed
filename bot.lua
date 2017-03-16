@@ -432,9 +432,9 @@ function vardump(value, depth, key)
     --vardump(extra)
     --vardump(data)
     if redis:hget(extra.gid, "lang:youseftearbot") == "en" then
-      text = 'SuperGroup ID : '..string.sub(extra.gid, 5,14)..'\nUser ID : '..extra.uid..'\nChannel : @TearTeam'
+      text = 'SuperGroup ID : '..string.sub(extra.gid, 5,14)..'\nUser ID : '..extra.uid..'\nChannel : @EsetGroupSecurity'
     else
-      text = 'آيدي گروه : '..string.sub(extra.gid, 5,14)..'\nآيدي کاربر : '..extra.uid..'\nکانال ما : @TearTeam'
+      text = 'آيدي گروه : '..string.sub(extra.gid, 5,14)..'\nآيدي کاربر : '..extra.uid..'\nکانال ما : @EsetGroupSecurity'
     end
     tdcli.sendPhoto(extra.gid, 0, extra.id, 1, nil, data.photos_[0].sizes_[1].photo_.persistent_id_, text)
   end
@@ -741,7 +741,7 @@ if msg.content_.text_ then
             if not matches[2] and reply == 0 then
               local function dl_photo(arg,data)
                 if redis:hget(msg.chat_id_, "lang:youseftearbot") == "en" then
-                  text = 'Bot ID : '..msg.chat_id_..'\nYour ID : '..msg.sender_user_id_..'\nChannel : @TearTeam'
+                  text = 'Bot ID : '..msg.chat_id_..'\nYour ID : '..msg.sender_user_id_..'\nChannel : @EsetGroupSecurity'
                 else
                   text = 'آيدي ربات : '..msg.chat_id_..'\nآيدي کاربر : '..msg.sender_user_id_..'\nنویسنده ربات : @MizbaniVPScom'
                 end
