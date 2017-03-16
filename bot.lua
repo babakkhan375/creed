@@ -639,7 +639,7 @@ if msg.content_.text_ then
           if msg.content_.text_:match("^/leave(-%d+)") and is_admin(msg) then
             local txt = {string.match(msg.content_.text_, "^/(leave)(-%d+)$")}
             tdcli.sendText(msg.chat_id_, msg.id_, 0, 1, nil, 'ربات با موفقيت از گروه '..txt[2]..' خارج شد.', 1, 'md')
-            tdcli.sendText(txt[2], 0, 0, 1, nil, 'ربات به دلايلي گروه را ترک ميکند\nبراي اطلاعات بيشتر ميتوانيد با @MizbaniVPScom در ارتباط باشيد.\nدر صورت ريپورت بودن ميتوانيد با ربات زير به ما پيام دهيد\n@MohammadNBGBot', 1, 'html')
+            tdcli.sendText(txt[2], 0, 0, 1, nil, 'ربات به دلايلي گروه را ترک ميکند\nبراي اطلاعات بيشتر ميتوانيد با @EsetGroupSecurity در ارتباط باشيد.\nدر صورت ريپورت بودن ميتوانيد با ربات زير به ما پيام دهيد\n@EsetGroupSecurity', 1, 'html')
             tdcli.changeChatMemberStatus(txt[2], tonumber(239726711), 'Left')
           end
           if msg.content_.text_:match("^[Aa]dd$") and is_admin(msg) then
@@ -713,7 +713,7 @@ if msg.content_.text_ then
             if redis:get("bot:enable:youseftearbot"..msg.chat_id_) then
               redis:del("bot:enable:youseftearbot"..msg.chat_id_)
                 tdcli.sendText(250049437, 0, 0, 1, nil, "شارژ اين گروه به اتمام رسيد \nLink : "..(redis:get("bot:group:link"..msg.chat_id_) or "تنظيم نشده").."\nID : "..msg.chat_id_..'\n\nدر صورتي که ميخواهيد ربات اين گروه را ترک کند از دستور زير استفاده کنيد\n\n/leave'..msg.chat_id_..'\nبراي جوين دادن توي اين گروه ميتوني از دستور زير استفاده کني:\n/join'..msg.chat_id_..'\n_________________\nدر صورتي که ميخواهيد گروه رو دوباره شارژ کنيد ميتوانيد از کد هاي زير استفاده کنيد...\n\n<code>براي شارژ 1 ماهه:</code>\n/plan1'..msg.chat_id_..'\n\n<code>براي شارژ 3 ماهه:</code>\n/plan2'..msg.chat_id_..'\n\n<code>براي شارژ نامحدود:</code>\n/plan3'..msg.chat_id_, 1, 'html')
-              tdcli.sendText(msg.chat_id_, 0,0, 1,nil, 'شارژ اين گروه به اتمام رسيده است !\nربات تا زمانيکه گروه شارژ نشود کار نخواهد کرد\nبراي شارژ کردن گروه خود به @YousefTear مراجعه نماييد !\nکانال ما > @TearTeam', 1, 'html')
+              tdcli.sendText(msg.chat_id_, 0,0, 1,nil, 'شارژ اين گروه به اتمام رسيده است !\nربات تا زمانيکه گروه شارژ نشود کار نخواهد کرد\nبراي شارژ کردن گروه خود به @EsetGroupSecurity مراجعه نماييد !\nکانال ما > @TearTeam', 1, 'html')
             end
           end
 
@@ -730,7 +730,7 @@ if msg.content_.text_ then
 
 
           if msg.content_.text_:match("^([Cc]reator)$") then
-            tdcli.sendText(msg.chat_id_, msg.id_, 0, 1, nil, "<b>Creator : </b>@MizbaniVPScom\n<b>Channel : </b>@....\n\nسازنده :‌ @MizbanivpsCom\nکانال : @.....", 1, "html")
+            tdcli.sendText(msg.chat_id_, msg.id_, 0, 1, nil, "<b>Creator : </b>@EsetGroupSecurity\n<b>Channel : </b>@....\n\nسازنده :‌ @EsetGroupSecurity\nکانال : @.....", 1, "html")
           end
 
           if msg.content_.text_:match("^([Ii][Dd])$") then
@@ -743,7 +743,7 @@ if msg.content_.text_ then
                 if redis:hget(msg.chat_id_, "lang:youseftearbot") == "en" then
                   text = 'Bot ID : '..msg.chat_id_..'\nYour ID : '..msg.sender_user_id_..'\nChannel : @EsetGroupSecurity'
                 else
-                  text = 'آيدي ربات : '..msg.chat_id_..'\nآيدي کاربر : '..msg.sender_user_id_..'\nنویسنده ربات : @MizbaniVPScom'
+                  text = 'آيدي ربات : '..msg.chat_id_..'\nآيدي کاربر : '..msg.sender_user_id_..'\nنویسنده ربات : @EsetGroupSecurity'
                 end
                 tdcli.sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, data.photos_[0].sizes_[1].photo_.persistent_id_, text)
               end
@@ -761,7 +761,7 @@ if msg.content_.text_ then
 به پیوی من خوش آمدید دوست عزیز !
 
 این یک ربات هوشمند لینک پاک کن و فحش پاک کن و ... میباشد که ماهانه به گروه ها با هزینه ی مناسب اجاره داده میشود تا در مدیریت گروه ها به شما کمک نماید !
-برای خرید به ایدی : @MizbanivpsCom پیام بدهید !
+برای خرید به ایدی : @EsetGroupSecurity پیام بدهید !
             ]]
             tdcli.sendText(msg.chat_id_, msg.id_, 0, 1, nil, txthelppv , 1, "md")
             redis:sadd("bot:userss:youseftearbot" , msg.chat_id_)
